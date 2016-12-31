@@ -320,6 +320,21 @@ alias hs=“hexo server”">
   </div>
   
     
+    <div class="copyright">
+        <p><span>copyright_info.title:</span><a href="/2016/12/29/MarkDown学习/">MarkDown学习</a></p>
+        <p><span>copyright_info.author:</span><a href="/" title="tooltip.back2home">lindyer</a></p>
+        <p><span>copyright_info.date:</span>2016-12-29, 21:59:43</p>
+        <p><span>copyright_info.updated:</span>2016-12-31, 15:08:56</p>
+        <p>
+            <span>copyright_info.url:</span><a class="post-url" href="/2016/12/29/MarkDown学习/" title="MarkDown学习">lindyer.github.io/2016/12/29/MarkDown学习/</a>
+            <span class="copy-path" data-clipboard-text="copyright_info.from lindyer.github.io/2016/12/29/MarkDown学习/　　copyright_info.by lindyer" title="tooltip.copyPath"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>copyright_info.license:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"copyright_info.cc"</a> copyright_info.notice
+        </p>
+    </div>
+
 
 
     <nav id="article-nav">
@@ -358,30 +373,6 @@ alias hs=“hexo server”">
     <script>
         yiliaConfig.toc = ["toc.hide", "toc.show", !!"false"];
     </script>
-
-
-
-    <div class="share">
-    
-        <div class="bdsharebuttonbox">
-          <!--  <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a> -->
-          <!--  <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a> -->
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-          <!--  <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a> -->
-          <!--  <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a> -->
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-          <!--  <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a> -->
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"MarkDown学习　| lindyer's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
 
 
 
@@ -513,8 +504,8 @@ alias hs=“hexo server”">
              tags: ".article-tag a", 
             
             
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
+            
+            
             
              friends: "#js-friends a", 
             
@@ -524,6 +515,23 @@ alias hs=“hexo server”">
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
