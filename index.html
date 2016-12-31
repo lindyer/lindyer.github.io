@@ -171,14 +171,6 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa 0" target="_blank" href="/t" title="0"></a>
-                            
-                                <a class="fa 1" target="_blank" href="/a" title="1"></a>
-                            
-                                <a class="fa 2" target="_blank" href="/g" title="2"></a>
-                            
-                                <a class="fa 3" target="_blank" href="/s" title="3"></a>
-                            
                         </ul>
                     </nav>
                 </section>
@@ -199,7 +191,7 @@
                     
                    <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.github.com/">GitHub</a>
                     
-                   <a target="_blank" class="main-nav-link switch-friends-link" href="/qmake.win">公孙二狗</a>
+                   <a target="_blank" class="main-nav-link switch-friends-link" href="http://qmake.win/">公孙二狗</a>
                     
                     </div>
                 </section>
@@ -265,14 +257,6 @@
             </nav>
             <nav class="header-nav">
                         <ul class="social">
-                            
-                                <a class="fa 0" target="_blank" href="/t" title="0"></a>
-                            
-                                <a class="fa 1" target="_blank" href="/a" title="1"></a>
-                            
-                                <a class="fa 2" target="_blank" href="/g" title="2"></a>
-                            
-                                <a class="fa 3" target="_blank" href="/s" title="3"></a>
                             
                         </ul>
             </nav>
@@ -462,13 +446,17 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 8;
+                var backgroundnum = 3;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })
     </script>
 
+
+    
+
+     
 
 
 
@@ -486,14 +474,14 @@
              github: ".github-widget a", 
             
             
-             tags: ".article-tag a", 
+            
             
             
             
             
             
              friends: "#js-friends a", 
-            
+             socail: ".social a" 
         }
         for (var x in oOpenInNew) {
             $(oOpenInNew[x]).attr("target", "_blank");
@@ -506,11 +494,11 @@
         var titleTime;
         document.addEventListener("visibilitychange", function() {
             if (document.hidden) {
-                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                document.title = "" + originTitle;
                 clearTimeout(titleTime);
             }
             else {
-                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                document.title = "" + originTitle;
                 titleTime = setTimeout(function() {
                     document.title = originTitle;
                 }, 2000);

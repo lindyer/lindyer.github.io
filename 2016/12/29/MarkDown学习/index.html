@@ -170,14 +170,6 @@ alias hs=“hexo server”">
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa 0" target="_blank" href="/t" title="0"></a>
-                            
-                                <a class="fa 1" target="_blank" href="/a" title="1"></a>
-                            
-                                <a class="fa 2" target="_blank" href="/g" title="2"></a>
-                            
-                                <a class="fa 3" target="_blank" href="/s" title="3"></a>
-                            
                         </ul>
                     </nav>
                 </section>
@@ -198,7 +190,7 @@ alias hs=“hexo server”">
                     
                    <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.github.com/">GitHub</a>
                     
-                   <a target="_blank" class="main-nav-link switch-friends-link" href="/qmake.win">公孙二狗</a>
+                   <a target="_blank" class="main-nav-link switch-friends-link" href="http://qmake.win/">公孙二狗</a>
                     
                     </div>
                 </section>
@@ -265,14 +257,6 @@ alias hs=“hexo server”">
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa 0" target="_blank" href="/t" title="0"></a>
-                            
-                                <a class="fa 1" target="_blank" href="/a" title="1"></a>
-                            
-                                <a class="fa 2" target="_blank" href="/g" title="2"></a>
-                            
-                                <a class="fa 3" target="_blank" href="/s" title="3"></a>
-                            
                         </ul>
             </nav>
         </header>                
@@ -324,21 +308,6 @@ alias hs=“hexo server”">
   </div>
   
     
-    <div class="copyright">
-        <p><span>copyright_info.title:</span><a href="/2016/12/29/MarkDown学习/">MarkDown学习</a></p>
-        <p><span>copyright_info.author:</span><a href="/" title="tooltip.back2home">lindyer</a></p>
-        <p><span>copyright_info.date:</span>2016-12-29, 21:59:43</p>
-        <p><span>copyright_info.updated:</span>2016-12-31, 15:08:56</p>
-        <p>
-            <span>copyright_info.url:</span><a class="post-url" href="/2016/12/29/MarkDown学习/" title="MarkDown学习">lindyer.github.io/2016/12/29/MarkDown学习/</a>
-            <span class="copy-path" data-clipboard-text="copyright_info.from lindyer.github.io/2016/12/29/MarkDown学习/　　copyright_info.by lindyer" title="tooltip.copyPath"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>copyright_info.license:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"copyright_info.cc"</a> copyright_info.notice
-        </p>
-    </div>
-
 
 
     <nav id="article-nav">
@@ -481,7 +450,7 @@ alias hs=“hexo server”">
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 8;
+                var backgroundnum = 3;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
@@ -505,14 +474,14 @@ alias hs=“hexo server”">
              github: ".github-widget a", 
             
             
-             tags: ".article-tag a", 
+            
             
             
             
             
             
              friends: "#js-friends a", 
-            
+             socail: ".social a" 
         }
         for (var x in oOpenInNew) {
             $(oOpenInNew[x]).attr("target", "_blank");
@@ -525,11 +494,11 @@ alias hs=“hexo server”">
         var titleTime;
         document.addEventListener("visibilitychange", function() {
             if (document.hidden) {
-                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                document.title = "" + originTitle;
                 clearTimeout(titleTime);
             }
             else {
-                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                document.title = "" + originTitle;
                 titleTime = setTimeout(function() {
                     document.title = originTitle;
                 }, 2000);
