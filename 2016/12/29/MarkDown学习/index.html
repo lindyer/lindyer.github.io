@@ -16,15 +16,11 @@
 <meta property="og:site_name" content="lindyer's Blog">
 <meta property="og:description" content="【概述】：Markdown是一种适用于网络的书写语言，易读易写；Markdown中文文档
 【兼容HTML】：其兼容HTML，但与HTML不同是的，HTML是一种发布的格式，MarkDown是一种书写的格式，Markdown的格式语法只涵盖存文本可以涵盖的范围。不在Markdown涵盖范围的标签，可以直接在文档里面用HTML撰写，不需要额外标注这是HTML或者Markdown；只要直接加标签就可以了">
-<meta property="og:image" content="lindyer.github.io/path/to/img.jpg">
-<meta property="og:image" content="lindyer.github.io/path/to/img.jpg">
-<meta property="og:image" content="lindyer.github.io/url/to/image">
-<meta property="og:updated_time" content="2017-01-02T04:30:08.819Z">
+<meta property="og:updated_time" content="2017-01-02T04:33:06.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MarkDown学习">
 <meta name="twitter:description" content="【概述】：Markdown是一种适用于网络的书写语言，易读易写；Markdown中文文档
 【兼容HTML】：其兼容HTML，但与HTML不同是的，HTML是一种发布的格式，MarkDown是一种书写的格式，Markdown的格式语法只涵盖存文本可以涵盖的范围。不在Markdown涵盖范围的标签，可以直接在文档里面用HTML撰写，不需要额外标注这是HTML或者Markdown；只要直接加标签就可以了">
-<meta name="twitter:image" content="lindyer.github.io/path/to/img.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lindyer&#39;s Blog" type="application/atom+xml">
   
@@ -216,7 +212,7 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">See my [<span class="string">About</span>](<span class="link">/about/</span>) page for details.</div></pre></td></tr></table></figure>
 <p><em>参考式</em>的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">This is [<span class="string">an example</span>][<span class="symbol">id</span>] reference-style link.</div></pre></td></tr></table></figure>
-<p>This is <a href="url/to/image" title="Optional title attribute">an example</a> reference-style link.</p>
+<p>This is [an example][id] reference-style link.</p>
 <p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">[<span class="symbol">id</span>]: <span class="link">http://example.com/  "Optional Title Here"</span></div></pre></td></tr></table></figure>
 <p>链接内容定义的形式为：</p>
@@ -235,21 +231,30 @@
 <p>Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>*</code> 或 <code>_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line"><span class="emphasis">*single asterisks*</span></div><div class="line"><span class="emphasis">_single underscores_</span></div><div class="line"><span class="strong">**double asterisks**</span></div><div class="line"><span class="strong">__double underscores__</span></div></pre></td></tr></table></figure>
 <p>【代码】</p>
-<p>如果要标记一小段行内代码，你可以用反引号把它包起来（<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>Use the <code>printf()</code> function.<br><figure class="highlight asciidoc"><table><tr><td class="code"><pre><div class="line"></div><div class="line">【图片】</div><div class="line"></div><div class="line">很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</div><div class="line"></div><div class="line">Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： <span class="strong">*行内式*</span>和<span class="strong">*参考式*</span>。</div><div class="line"></div><div class="line">行内式的图片语法看起来像是：</div></pre></td></tr></table></figure></p>
-<p><img src="/path/to/img.jpg" alt="Alt text"><br><img src="/path/to/img.jpg" alt="Alt text" title="Optional title"><br><figure class="highlight haml"><table><tr><td class="code"><pre><div class="line"></div><div class="line">详细叙述如下：</div><div class="line"></div><div class="line">-<span class="ruby"> 一个惊叹号 <span class="string">`!`</span></span></div><div class="line">-<span class="ruby"> 接着一个方括号，里面放上图片的替代文字</span></div><div class="line">-<span class="ruby"> 接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 <span class="string">'title'</span> 文字。</span></div><div class="line"></div><div class="line">参考式的图片语法则长得像这样：</div></pre></td></tr></table></figure></p>
-<p><img src="url/to/image" alt="Alt text" title="Optional title attribute"><br><figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line"></div><div class="line">「<span class="built_in">id</span>」是图片参考的名称，图片参考的定义方式则和连结参考一样：</div></pre></td></tr></table></figure></p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><div class="line"></div><div class="line">到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 `` 标签。</div><div class="line"></div><div class="line">### 其他</div><div class="line"></div><div class="line">【自动链接】</div><div class="line"></div><div class="line">Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用尖括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</div><div class="line"></div><div class="line">【反斜杠】</div><div class="line"></div><div class="line">Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 `&lt;em&gt;` 标签），你可以在星号的前面加上反斜杠：</div><div class="line"></div><div class="line">Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</div></pre></td></tr></table></figure>
-<p>\   反斜线<br>`   反引号</p>
+<p>如果要标记一小段行内代码，你可以用反引号把它包起来（<code>`` </code>），例如：</p>
+<figure class="highlight fortran"><table><tr><td class="code"><pre><div class="line"><span class="keyword">Use</span> the `printf()` <span class="function"><span class="keyword">function</span>.</span></div></pre></td></tr></table></figure>
+<p>【图片】</p>
+<p>很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</p>
+<p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： <em>行内式</em>和<em>参考式</em>。</p>
+<p>行内式的图片语法看起来像是：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">![<span class="string">Alt text</span>](<span class="link">/path/to/img.jpg</span>)</div><div class="line">![<span class="string">Alt text</span>](<span class="link">/path/to/img.jpg "Optional title"</span>)</div></pre></td></tr></table></figure>
+<p>详细叙述如下：</p>
 <ul>
-<li>星号<br>_   底线<br>{}  花括号<br>[]  方括号<br>()  括弧<h1 id="井字号"><a href="#井字号" class="headerlink" title="井字号"></a>井字号</h1></li>
+<li>一个惊叹号 <code>!</code></li>
+<li>接着一个方括号，里面放上图片的替代文字</li>
+<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 ‘title’ 文字。</li>
 </ul>
-<ul>
-<li>加号</li>
-</ul>
-<ul>
-<li>减号<br>.   英文句点<br>!   惊叹号<br>```</li>
-</ul>
+<p>参考式的图片语法则长得像这样：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">![<span class="string">Alt text</span>][<span class="symbol">id</span>]</div></pre></td></tr></table></figure>
+<p>「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">[<span class="built_in">id</span>]: url/<span class="keyword">to</span>/image  <span class="string">"Optional title attribute"</span></div></pre></td></tr></table></figure>
+<p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>【自动链接】</p>
+<p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用尖括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
+<p>【反斜杠】</p>
+<p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <code>&lt;em&gt;</code> 标签），你可以在星号的前面加上反斜杠：</p>
+<p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">\   反斜线</div><div class="line">`   反引号</div><div class="line"><span class="bullet">*   </span>星号</div><div class="line">_   底线</div><div class="line">&#123;&#125;  花括号</div><div class="line">[]  方括号</div><div class="line">()  括弧</div><div class="line"><span class="section">#   井字号</span></div><div class="line"><span class="bullet">+   </span>加号</div><div class="line"><span class="bullet">-   </span>减号</div><div class="line">.   英文句点</div><div class="line">!   惊叹号</div></pre></td></tr></table></figure>
 <p>参考链接：<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown语法说明（简体中文）</a></p>
 
       
