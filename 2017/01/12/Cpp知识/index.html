@@ -9,21 +9,18 @@
   <title>Cpp知识 | lindyer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="sizeof  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。
-语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。
-解释：1）返回type类型对应对象的大小（以字节为单位）；2）返回">
+语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cpp知识">
 <meta property="og:url" content="lindyer.github.io/2017/01/12/Cpp知识/index.html">
 <meta property="og:site_name" content="lindyer's Blog">
 <meta property="og:description" content="sizeof  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。
-语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。
-解释：1）返回type类型对应对象的大小（以字节为单位）；2）返回">
-<meta property="og:updated_time" content="2017-01-12T02:44:18.358Z">
+语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。">
+<meta property="og:updated_time" content="2017-01-12T04:44:25.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cpp知识">
 <meta name="twitter:description" content="sizeof  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。
-语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。
-解释：1）返回type类型对应对象的大小（以字节为单位）；2）返回">
+语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。">
   
     <link rel="alternative" href="/atom.xml" title="lindyer&#39;s Blog" type="application/atom+xml">
   
@@ -161,6 +158,7 @@
       
         <p><code>sizeof</code>  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。</p>
 <p><strong>语法</strong> ：<code>sizeof (type)</code>  或者 <code>sizeof expression None</code> ,两个都返回一个std::size_t类型的常量。</p>
+<a id="more"></a>
 <p><strong>解释</strong>：1）返回type类型对应对象的大小（以字节为单位）；2）返回expression的返回类型对应对象的大小。</p>
 <p><strong>注解</strong>：</p>
 <p>无论 CHAR_BIT 为何值，sizeof(char)、sizeof(signed char)、sizeof(unsigned char) 总是返回 1。</p>
@@ -172,6 +170,15 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">struct</span> Empty &#123;&#125;;</div><div class="line"><span class="keyword">struct</span> Bit &#123;<span class="keyword">unsigned</span> bit:<span class="number">1</span>; &#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    Empty e;</div><div class="line">    Bit b;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"size of empty class: "</span>     &lt;&lt; <span class="keyword">sizeof</span> e        &lt;&lt; <span class="string">'\n'</span></div><div class="line">              &lt;&lt; <span class="string">"size of pointer : "</span>        &lt;&lt; <span class="keyword">sizeof</span> &amp;e       &lt;&lt; <span class="string">'\n'</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of function: "        &lt;&lt; sizeof(void())  &lt;&lt; '\n'  // compile error</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of incomplete type: " &lt;&lt; sizeof(int[])   &lt;&lt; '\n'  // compile error</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of bit field: "       &lt;&lt; sizeof b.bit    &lt;&lt; '\n'  // compile error</span></div><div class="line">              &lt;&lt; <span class="string">"size of array of 10 int: "</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">int</span>[<span class="number">10</span>]) &lt;&lt; <span class="string">'\n'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>输出</strong> （系统为32位指针，32位int系统）</p>
 <figure class="highlight smali"><table><tr><td class="code"><pre><div class="line">size of empty class: 1</div><div class="line">size of pointer<span class="keyword"> :</span> 4</div><div class="line">size of<span class="built_in"> array </span>of 10 int: 40</div></pre></td></tr></table></figure>
+<p><code>sizeof...</code> 操作符（C++11），查询参数组中的元素个数。</p>
+<p><strong>语法</strong>： <code>sizeof...(parameter_pack)</code> 返回std::size_t类型对象。</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span>... Args&gt;</div><div class="line"><span class="built_in">std</span>::<span class="keyword">size_t</span> f()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">sizeof</span>...(Args);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; f&lt;&gt;() &lt;&lt; <span class="string">'\n'</span></div><div class="line">              &lt;&lt; f&lt;<span class="keyword">int</span>&gt;() &lt;&lt; <span class="string">'\n'</span></div><div class="line">              &lt;&lt; f&lt;<span class="keyword">char</span>, <span class="keyword">int</span>, <span class="keyword">double</span>&gt;() &lt;&lt; <span class="string">'\n'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>输出</strong>：</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><div class="line"><span class="number">0</span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure>
+<p><code>tip:</code> 三元表示式 <code>? :</code> 问号后面的两个操作数必须为同一类型。</p>
+<p><code>tip:</code> 初始化列表在生成对象时才会随相应的构造函数一起调用。</p>
+
       
 
       
@@ -439,7 +446,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,7 +454,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Hexo</a>
+                <a href="javascript:void(0)" class="color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,10 +471,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">MarkDown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Git</a>
               </li>
             
             <div class="clearfix"></div>
