@@ -136,6 +136,215 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Cpp基本概念-翻译阶段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/12/Cpp基本概念-翻译阶段/">Cpp基本概念-翻译阶段</a>
+    </h1>
+  
+
+        <a href="/2017/01/12/Cpp基本概念-翻译阶段/" class="archive-article-date">
+  	<time datetime="2017-01-12T03:04:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>翻译阶段</strong> ：C++源文件以如下顺序进行编译</p>
+<p>阶段一：</p>
+<p>源代码文件的各个字节被映射（执行定义的方式）连接到的人物<em>基本源代码字符集</em>。特别地，操作系统依赖的行结束指示符被换行符替换。在<em>基本的源代码字符集</em>包含96个字符：</p>
+<p>A） 5个空白字符（空格，水平制表符，垂直制表符，换页，换行）</p>
+<p>B）由10位字符<code>&#39;0&#39;</code>到<code>&#39;9&#39;</code></p>
+<p>C）从52字母<code>&#39;A&#39;</code>到<code>&#39;Z&#39;</code>和<code>&#39;A&#39;</code>到<code>&#39;Z&#39;</code></p>
+<p>D） 29标点字符：<code>_ { } [ ] ＃（）&lt;&gt;％：; 。？* + - / ^＆| 〜！=，\“&#39;</code></p>
+<p>不能被映射到基本源字符集中的所有源文件的字符被取代其<a href="http://en.cppreference.com/w/cpp/language/escape" target="_blank" rel="external">通用字符名称</a>（逃脱<code>\u</code>或<code>\U</code>）或由被等效处理一些内部形式。</p>
+<p>3） <a href="http://en.cppreference.com/w/cpp/language/operator_alternative" target="_blank" rel="external">三字符序列</a>是由对应的单字符表示代替。（直到C ++ 17）</p>
+<p>阶段2<br>1）当反斜杠出现在一本线（后面紧跟换行符）结束时，双方反斜杠和换行符被删除，两个物理源线组合成一个逻辑源代码行。这是单遍操作; 以两个反斜杠结尾，后跟空行的行不会将三个行合并为一个。如果通用字符名（\ UXXX在这个阶段形成）的行为是不确定的。<br>2）如果一个非空源文件不这一步后，新行字符结尾（无论它没有换行符原来，或者用反斜杠结束）的行为是不确定的 （直到C ++ 11）一个终止换行符加 （因为C ++ 11） 。<br>阶段3<br>1）源文件被分解成注释，空白字符（空格，水平制表符，换行符，垂直制表符，和换页）和序列预处理标记，它有以下几种：<br>一）标题名称，如&lt; iostream的&gt;或“myfile.h” （仅在公认 的#include）<br>B） 标识符<br>C）预处理号<br>D） 字符和字符串文字，包括用户自定义的 （因为C ++ 11）<br>E）运营商和标点符号（包括替代标记），如+，&lt;&lt; =，新的，&lt; ％，##，或与<br>F）独立非空白字符不适合在任何其他类别<br>2）在阶段1，初始和任何最终双引号之间2执行的任何转换原始字符串字面量将恢复。<br>（从C ++ 11开始）<br>3）每个注释被一个空格字符替代。<br>保留换行符，并且未指定非换行符空格序列是否可以折叠为单个空格字符。<br>阶段4<br>1）的预处理器执行。<br>2）用导入的每个文件的#include指令经历的阶段1至4，递归。<br>3）在这个阶段结束时，所有的预处理器指令从源移除。<br>阶段5<br>1）中的所有字符的字符文字和字符串文字从源字符集转换后的执行字符集（这可能是一个多字节字符集，如UTF-8，只要96字符的基本来源字符集上市阶段1具有单字节表示）。<br>2） 转义序列被扩展并转换为和字符文字和非原始字符串字面通用字符名执行字符集。如果由通用字符名指定的字符不是执行字符集的成员，则结果是实现定义的，但是保证不是空（宽）字符。<br>注：此阶段执行的转换可以通过命令行选项在一些实施控制：GCC和铿锵使用- finput -字符集指定源字符集编码，- fexec -字符集和- fwide - EXEC -字符集指定在字符串和字符集执行字符的编码没有编码的前缀 （因为C ++ 11） 。<br>阶段6<br>相邻的字符串并置。<br>阶段7<br>编译发生：每个预处理令牌转换为令牌。令牌在语法和语义上被分析和翻译为翻译单元。<br>阶段8<br>每个翻译单元进行检查，生产所需的模板实例，包括所要求的那些清单明确的实例。的模板的定义的位置，并且需要实例化被执行以产生实例化的单位。<br>阶段9<br>将满足外部引用所需的翻译单元，实例化单元和库组件收集到包含在其执行环境中执行所需的信息的程序映像中。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">C++</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">概念</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/12/Cpp基本概念-翻译阶段/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Cpp知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/12/Cpp知识/">Cpp知识</a>
+    </h1>
+  
+
+        <a href="/2017/01/12/Cpp知识/" class="archive-article-date">
+  	<time datetime="2017-01-12T02:17:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>sizeof</code>  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。</p>
+<p><strong>语法</strong> ：<code>sizeof (type)</code>  或者 <code>sizeof expression None</code> ,两个都返回一个std::size_t类型的常量。</p>
+<p><strong>解释</strong>：1）返回type类型对应对象的大小（以字节为单位）；2）返回expression的返回类型对应对象的大小。</p>
+<p><strong>注解</strong>：</p>
+<p>无论 CHAR_BIT 为何值，sizeof(char)、sizeof(signed char)、sizeof(unsigned char) 总是返回 1。</p>
+<p>sizeof 不能用于函数类型、不完全类型和位段左值。</p>
+<p>当应用于引用类型时，其结果是被引用类型的大小。</p>
+<p>当应用于类时，其结果是该类对象的大小与该对象放入数组时所需的填充大小的总和。</p>
+<p>当应用于空类时，总是返回 1。</p>
+<p><strong>示例</strong> </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">struct</span> Empty &#123;&#125;;</div><div class="line"><span class="keyword">struct</span> Bit &#123;<span class="keyword">unsigned</span> bit:<span class="number">1</span>; &#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    Empty e;</div><div class="line">    Bit b;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"size of empty class: "</span>     &lt;&lt; <span class="keyword">sizeof</span> e        &lt;&lt; <span class="string">'\n'</span></div><div class="line">              &lt;&lt; <span class="string">"size of pointer : "</span>        &lt;&lt; <span class="keyword">sizeof</span> &amp;e       &lt;&lt; <span class="string">'\n'</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of function: "        &lt;&lt; sizeof(void())  &lt;&lt; '\n'  // compile error</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of incomplete type: " &lt;&lt; sizeof(int[])   &lt;&lt; '\n'  // compile error</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of bit field: "       &lt;&lt; sizeof b.bit    &lt;&lt; '\n'  // compile error</span></div><div class="line">              &lt;&lt; <span class="string">"size of array of 10 int: "</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">int</span>[<span class="number">10</span>]) &lt;&lt; <span class="string">'\n'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>输出</strong> （系统为32位指针，32位int系统）</p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><div class="line">size of empty class: 1</div><div class="line">size of pointer<span class="keyword"> :</span> 4</div><div class="line">size of<span class="built_in"> array </span>of 10 int: 40</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">C++</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/12/Cpp知识/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-微信小程序入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/10/微信小程序入门/">微信小程序入门</a>
+    </h1>
+  
+
+        <a href="/2017/01/10/微信小程序入门/" class="archive-article-date">
+  	<time datetime="2017-01-10T10:48:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-10</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>微信开发者工具常用快捷键</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><div class="line"><span class="built_in">CTRL</span> + M 显示/隐藏模拟器</div><div class="line"><span class="built_in">CTRL</span> + \ 显示/隐藏侧边栏</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/10/微信小程序入门/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Git学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -154,7 +363,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>参考链接：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的官方网站</a></p>
+        <p><a href="https://git-scm.com/downloads" target="_blank" rel="external">Git下载</a> 、 <a href="https://desktop.github.com/" target="_blank" rel="external">Github for Desktop</a></p>
+<p>安装完成后（Windows下右键菜单会出现Git Bash，Linux和mac则通过命令行Git查看是否安装成功），还需要最后一步设置，在，命令行输入：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"Your Name"</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span> <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure>
+<p>注意<code>git config</code>命令的<code>--global</code>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+<p>【创建版本库】</p>
+<p>参考链接：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的官方网站</a></p>
 
       
 
@@ -168,11 +382,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">Git</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">Git</a>
         </li>
       
 		</ul>
@@ -474,7 +688,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Git</a>
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,7 +696,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">概念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,17 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="lindyer.github.io">
-  <title>Tag: Hexo | lindyer&#39;s Blog</title>
+  <title>Cpp基本概念-翻译阶段 | lindyer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录，分享IT技术的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lindyer's Blog">
-<meta property="og:url" content="lindyer.github.io/source/tags/Hexo/index.html">
+  <meta name="description" content="翻译阶段 ：C++源文件以如下顺序进行编译
+阶段一：
+源代码文件的各个字节被映射（执行定义的方式）连接到的人物基本源代码字符集。特别地，操作系统依赖的行结束指示符被换行符替换。在基本的源代码字符集包含96个字符：
+A） 5个空白字符（空格，水平制表符，垂直制表符，换页，换行）
+B）由10位字符&amp;#39;0&amp;#39;到&amp;#39;9&amp;#39;
+C）从52字母&amp;#39;A&amp;#39;到&amp;#39;Z&amp;#39">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cpp基本概念-翻译阶段">
+<meta property="og:url" content="lindyer.github.io/2017/01/12/Cpp基本概念-翻译阶段/index.html">
 <meta property="og:site_name" content="lindyer's Blog">
-<meta property="og:description" content="记录，分享IT技术的个人博客">
+<meta property="og:description" content="翻译阶段 ：C++源文件以如下顺序进行编译
+阶段一：
+源代码文件的各个字节被映射（执行定义的方式）连接到的人物基本源代码字符集。特别地，操作系统依赖的行结束指示符被换行符替换。在基本的源代码字符集包含96个字符：
+A） 5个空白字符（空格，水平制表符，垂直制表符，换页，换行）
+B）由10位字符&amp;#39;0&amp;#39;到&amp;#39;9&amp;#39;
+C）从52字母&amp;#39;A&amp;#39;到&amp;#39;Z&amp;#39">
+<meta property="og:updated_time" content="2017-01-12T04:14:21.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lindyer's Blog">
-<meta name="twitter:description" content="记录，分享IT技术的个人博客">
+<meta name="twitter:title" content="Cpp基本概念-翻译阶段">
+<meta name="twitter:description" content="翻译阶段 ：C++源文件以如下顺序进行编译
+阶段一：
+源代码文件的各个字节被映射（执行定义的方式）连接到的人物基本源代码字符集。特别地，操作系统依赖的行结束指示符被换行符替换。在基本的源代码字符集包含96个字符：
+A） 5个空白字符（空格，水平制表符，垂直制表符，换页，换行）
+B）由10位字符&amp;#39;0&amp;#39;到&amp;#39;9&amp;#39;
+C）从52字母&amp;#39;A&amp;#39;到&amp;#39;Z&amp;#39">
   
     <link rel="alternative" href="/atom.xml" title="lindyer&#39;s Blog" type="application/atom+xml">
   
@@ -134,64 +150,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Cpp基本概念-翻译阶段" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/31/Hexo-学习/" class="archive-article-date">
-  	<time datetime="2016-12-31T04:07:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/31/Hexo-学习/">Hexo  学习</a>
+    <h1 class="article-title" itemprop="name">
+      Cpp基本概念-翻译阶段
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <a href="/2017/01/12/Cpp基本概念-翻译阶段/" class="archive-article-date">
+  	<time datetime="2017-01-12T03:04:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>翻译阶段</strong> ：C++源文件以如下顺序进行编译</p>
+<p>阶段一：</p>
+<p>源代码文件的各个字节被映射（执行定义的方式）连接到的人物<em>基本源代码字符集</em>。特别地，操作系统依赖的行结束指示符被换行符替换。在<em>基本的源代码字符集</em>包含96个字符：</p>
+<p>A） 5个空白字符（空格，水平制表符，垂直制表符，换页，换行）</p>
+<p>B）由10位字符<code>&#39;0&#39;</code>到<code>&#39;9&#39;</code></p>
+<p>C）从52字母<code>&#39;A&#39;</code>到<code>&#39;Z&#39;</code>和<code>&#39;A&#39;</code>到<code>&#39;Z&#39;</code></p>
+<p>D） 29标点字符：<code>_ { } [ ] ＃（）&lt;&gt;％：; 。？* + - / ^＆| 〜！=，\“&#39;</code></p>
+<p>不能被映射到基本源字符集中的所有源文件的字符被取代其<a href="http://en.cppreference.com/w/cpp/language/escape" target="_blank" rel="external">通用字符名称</a>（逃脱<code>\u</code>或<code>\U</code>）或由被等效处理一些内部形式。</p>
+<p>3） <a href="http://en.cppreference.com/w/cpp/language/operator_alternative" target="_blank" rel="external">三字符序列</a>是由对应的单字符表示代替。（直到C ++ 17）</p>
+<p>阶段2<br>1）当反斜杠出现在一本线（后面紧跟换行符）结束时，双方反斜杠和换行符被删除，两个物理源线组合成一个逻辑源代码行。这是单遍操作; 以两个反斜杠结尾，后跟空行的行不会将三个行合并为一个。如果通用字符名（\ UXXX在这个阶段形成）的行为是不确定的。<br>2）如果一个非空源文件不这一步后，新行字符结尾（无论它没有换行符原来，或者用反斜杠结束）的行为是不确定的 （直到C ++ 11）一个终止换行符加 （因为C ++ 11） 。<br>阶段3<br>1）源文件被分解成注释，空白字符（空格，水平制表符，换行符，垂直制表符，和换页）和序列预处理标记，它有以下几种：<br>一）标题名称，如&lt; iostream的&gt;或“myfile.h” （仅在公认 的#include）<br>B） 标识符<br>C）预处理号<br>D） 字符和字符串文字，包括用户自定义的 （因为C ++ 11）<br>E）运营商和标点符号（包括替代标记），如+，&lt;&lt; =，新的，&lt; ％，##，或与<br>F）独立非空白字符不适合在任何其他类别<br>2）在阶段1，初始和任何最终双引号之间2执行的任何转换原始字符串字面量将恢复。<br>（从C ++ 11开始）<br>3）每个注释被一个空格字符替代。<br>保留换行符，并且未指定非换行符空格序列是否可以折叠为单个空格字符。<br>阶段4<br>1）的预处理器执行。<br>2）用导入的每个文件的#include指令经历的阶段1至4，递归。<br>3）在这个阶段结束时，所有的预处理器指令从源移除。<br>阶段5<br>1）中的所有字符的字符文字和字符串文字从源字符集转换后的执行字符集（这可能是一个多字节字符集，如UTF-8，只要96字符的基本来源字符集上市阶段1具有单字节表示）。<br>2） 转义序列被扩展并转换为和字符文字和非原始字符串字面通用字符名执行字符集。如果由通用字符名指定的字符不是执行字符集的成员，则结果是实现定义的，但是保证不是空（宽）字符。<br>注：此阶段执行的转换可以通过命令行选项在一些实施控制：GCC和铿锵使用- finput -字符集指定源字符集编码，- fexec -字符集和- fwide - EXEC -字符集指定在字符串和字符集执行字符的编码没有编码的前缀 （因为C ++ 11） 。<br>阶段6<br>相邻的字符串并置。<br>阶段7<br>编译发生：每个预处理令牌转换为令牌。令牌在语法和语义上被分析和翻译为翻译单元。<br>阶段8<br>每个翻译单元进行检查，生产所需的模板实例，包括所要求的那些清单明确的实例。的模板的定义的位置，并且需要实例化被执行以产生实例化的单位。<br>阶段9<br>将满足外部引用所需的翻译单元，实例化单元和库组件收集到包含在其执行环境中执行所需的信息的程序映像中。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">C++</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">Hexo</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">概念</a>
         </li>
       
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:lindyer.github.io/2017/01/12/Cpp基本概念-翻译阶段/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/12/Cpp知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Cpp知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Cpp基本概念-翻译阶段" data-title="Cpp基本概念-翻译阶段" data-url="lindyer.github.io/2017/01/12/Cpp基本概念-翻译阶段/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lindyer"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 
           </div>
@@ -214,9 +321,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",

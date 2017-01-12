@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="lindyer.github.io">
-  <title>Tag: Hexo | lindyer&#39;s Blog</title>
+  <title>Cpp知识 | lindyer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录，分享IT技术的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lindyer's Blog">
-<meta property="og:url" content="lindyer.github.io/source/tags/Hexo/index.html">
+  <meta name="description" content="sizeof  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。
+语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。
+解释：1）返回type类型对应对象的大小（以字节为单位）；2）返回">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cpp知识">
+<meta property="og:url" content="lindyer.github.io/2017/01/12/Cpp知识/index.html">
 <meta property="og:site_name" content="lindyer's Blog">
-<meta property="og:description" content="记录，分享IT技术的个人博客">
+<meta property="og:description" content="sizeof  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。
+语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。
+解释：1）返回type类型对应对象的大小（以字节为单位）；2）返回">
+<meta property="og:updated_time" content="2017-01-12T02:44:18.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lindyer's Blog">
-<meta name="twitter:description" content="记录，分享IT技术的个人博客">
+<meta name="twitter:title" content="Cpp知识">
+<meta name="twitter:description" content="sizeof  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。
+语法 ：sizeof (type)  或者 sizeof expression None ,两个都返回一个std::size_t类型的常量。
+解释：1）返回type类型对应对象的大小（以字节为单位）；2）返回">
   
     <link rel="alternative" href="/atom.xml" title="lindyer&#39;s Blog" type="application/atom+xml">
   
@@ -134,64 +141,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Cpp知识" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/31/Hexo-学习/" class="archive-article-date">
-  	<time datetime="2016-12-31T04:07:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/31/Hexo-学习/">Hexo  学习</a>
+    <h1 class="article-title" itemprop="name">
+      Cpp知识
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <a href="/2017/01/12/Cpp知识/" class="archive-article-date">
+  	<time datetime="2017-01-12T02:17:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>sizeof</code>  查询对象或者类型的大小，在需要知道对象的实际大小使用。  sizeof 如用于数组，只能测出静态数组的大小，无法检测动态分配的或外部数组大小。sizeof用于指针时将返回4。</p>
+<p><strong>语法</strong> ：<code>sizeof (type)</code>  或者 <code>sizeof expression None</code> ,两个都返回一个std::size_t类型的常量。</p>
+<p><strong>解释</strong>：1）返回type类型对应对象的大小（以字节为单位）；2）返回expression的返回类型对应对象的大小。</p>
+<p><strong>注解</strong>：</p>
+<p>无论 CHAR_BIT 为何值，sizeof(char)、sizeof(signed char)、sizeof(unsigned char) 总是返回 1。</p>
+<p>sizeof 不能用于函数类型、不完全类型和位段左值。</p>
+<p>当应用于引用类型时，其结果是被引用类型的大小。</p>
+<p>当应用于类时，其结果是该类对象的大小与该对象放入数组时所需的填充大小的总和。</p>
+<p>当应用于空类时，总是返回 1。</p>
+<p><strong>示例</strong> </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">struct</span> Empty &#123;&#125;;</div><div class="line"><span class="keyword">struct</span> Bit &#123;<span class="keyword">unsigned</span> bit:<span class="number">1</span>; &#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    Empty e;</div><div class="line">    Bit b;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"size of empty class: "</span>     &lt;&lt; <span class="keyword">sizeof</span> e        &lt;&lt; <span class="string">'\n'</span></div><div class="line">              &lt;&lt; <span class="string">"size of pointer : "</span>        &lt;&lt; <span class="keyword">sizeof</span> &amp;e       &lt;&lt; <span class="string">'\n'</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of function: "        &lt;&lt; sizeof(void())  &lt;&lt; '\n'  // compile error</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of incomplete type: " &lt;&lt; sizeof(int[])   &lt;&lt; '\n'  // compile error</span></div><div class="line"><span class="comment">//            &lt;&lt; "size of bit field: "       &lt;&lt; sizeof b.bit    &lt;&lt; '\n'  // compile error</span></div><div class="line">              &lt;&lt; <span class="string">"size of array of 10 int: "</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">int</span>[<span class="number">10</span>]) &lt;&lt; <span class="string">'\n'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>输出</strong> （系统为32位指针，32位int系统）</p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><div class="line">size of empty class: 1</div><div class="line">size of pointer<span class="keyword"> :</span> 4</div><div class="line">size of<span class="built_in"> array </span>of 10 int: 40</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">Hexo</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">C++</a>
         </li>
       
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:lindyer.github.io/2017/01/12/Cpp知识/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+    <a href="/2017/01/12/Cpp基本概念-翻译阶段/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Cpp基本概念-翻译阶段
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/10/微信小程序入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序入门</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Cpp知识" data-title="Cpp知识" data-url="lindyer.github.io/2017/01/12/Cpp知识/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lindyer"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 
           </div>
@@ -214,9 +319,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
