@@ -8,19 +8,16 @@
   <link rel="dns-prefetch" href="lindyer.github.io">
   <title>JavaScript学习 | lindyer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC]
-我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Ref">
+  <meta name="description" content="我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript学习">
 <meta property="og:url" content="lindyer.github.io/2017/04/18/JavaScriptt学习/index.html">
 <meta property="og:site_name" content="lindyer's Blog">
-<meta property="og:description" content="[TOC]
-我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Ref">
-<meta property="og:updated_time" content="2017-04-18T16:42:13.996Z">
+<meta property="og:description" content="我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference">
+<meta property="og:updated_time" content="2017-04-18T16:44:44.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript学习">
-<meta name="twitter:description" content="[TOC]
-我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Ref">
+<meta name="twitter:description" content="我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference">
   
     <link rel="alternative" href="/atom.xml" title="lindyer&#39;s Blog" type="application/atom+xml">
   
@@ -156,12 +153,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<p>我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference能看到Qt支持的js的内容，但有一点不足的是，帮助文档缺乏函数原型的介绍，返回值也没有；所以有时候得借助js的手册<a href="http://lzw.me/pages/ecmascript/" target="_blank" rel="external">http://lzw.me/pages/ecmascript/</a> 。下面对某些知识进行摘选记录(在此鸣谢廖雪峰老师的教程)</p>
+        <p>我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference能看到Qt支持的js的内容，但有一点不足的是，帮助文档缺乏函数原型的介绍，返回值也没有；所以有时候得借助js的手册<a href="http://lzw.me/pages/ecmascript/" target="_blank" rel="external">http://lzw.me/pages/ecmascript/</a> 。下面对某些知识进行摘选记录(在此鸣谢廖雪峰老师的教程)</p>
 <a id="more"></a>
 <hr>
 <h4 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h4><p>​    如果一个变量在函数体内部声明，则该变量的作用域为<code>整个函数体</code> ，这里面主要涉及到了变量提升，函数体内的声明的变量都会提升到函数顶部，所以这里推荐在函数顶部用var 声明函数内用到的所有变量，如下：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>,</div><div class="line">    	b = <span class="number">2</span>,i</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>, i &lt; <span class="number">10</span>; ++i)&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> </div><div class="line">    	a = <span class="number">1</span>,</div><div class="line">    	b = <span class="number">2</span>,i</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>, i &lt; <span class="number">10</span>; ++i)&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>另外在函数体外不可引用该变量。</p>
 <h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line"> 	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;			<span class="comment">//[1]</span></div><div class="line">      <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;  <span class="comment">//[2]</span></div><div class="line">        <span class="keyword">return</span> x + y</div><div class="line">      &#125;)</div><div class="line"> 	&#125; </div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f = sum([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">//[3]</span></div><div class="line"><span class="built_in">console</span>.info(f())  <span class="comment">//6</span></div></pre></td></tr></table></figure>
 <p>上面[1]中函数作为返回值，所以[3]中f还是[1]指向的函数变量（带有arr），f() 才真正计算结果。</p>
@@ -443,7 +439,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Git</a>
+                <a href="javascript:void(0)" class="color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,7 +447,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">C++</a>
+                <a href="javascript:void(0)" class="color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,11 +455,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">MarkDown</a>
+                <a href="javascript:void(0)" class="color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">js</a>
+                <a href="javascript:void(0)" class="color4">MarkDown</a>
               </li>
             
             <div class="clearfix"></div>
