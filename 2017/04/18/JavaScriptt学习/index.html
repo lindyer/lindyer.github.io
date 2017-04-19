@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="lindyer.github.io">
-  <title>JavaScript之变量、闭包 | lindyer&#39;s Blog</title>
+  <title>JavaScript学习- | lindyer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript之变量、闭包">
+<meta property="og:title" content="JavaScript学习-">
 <meta property="og:url" content="lindyer.github.io/2017/04/18/JavaScriptt学习/index.html">
 <meta property="og:site_name" content="lindyer's Blog">
 <meta property="og:description" content="我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference">
-<meta property="og:updated_time" content="2017-04-19T12:52:26.548Z">
+<meta property="og:updated_time" content="2017-04-19T13:06:16.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript之变量、闭包">
+<meta name="twitter:title" content="JavaScript学习-">
 <meta name="twitter:description" content="我回来啦。。。。。。（之前之前想试着坚持写博客来着，不得不承认缺乏坚持一直是我的缺点，我将试着改变它），由于最近工作主要用到qml（ECMAScript被设计成qml的一部分，并采用更严格的模式，貌似Qt5.8现在只支持ECMAScript 5，所以ECMAScript 6还是先放一放，这里暂时只记录ECMAScript5(下称js)的内容），Qt帮助文档搜ECMAScript Reference">
   
     <link rel="alternative" href="/atom.xml" title="lindyer&#39;s Blog" type="application/atom+xml">
@@ -142,7 +142,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript之变量、闭包
+      JavaScript学习-
     </h1>
   
 
@@ -172,7 +172,7 @@
 <p>在面向对象的程序设计语言中，比如java和c++，要在对象内部封装一个私有变量，可以用private修饰一个成员变量，在没有class机制，只有函数的语言里，借助闭包，同样可以封装一个私有变量。用JavaScript创建一个计数器：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params">initial</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> x = initial || <span class="number">0</span></div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="attr">inc</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> ++x</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o1 = counter()</div><div class="line"><span class="built_in">console</span>.info(o1.inc())</div><div class="line"><span class="built_in">console</span>.info(o1.inc())</div></pre></td></tr></table></figure>
 <p>在返回的对象中，实现了一个闭包，该闭包携带了局部变量x, 换句话说，闭包就是携带状态的函数，并且他的状态可以完全对外隐藏起来。</p>
-<h4 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h4>
+
       
 
       
@@ -270,7 +270,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JavaScriptt学习" data-title="JavaScript之变量、闭包" data-url="lindyer.github.io/2017/04/18/JavaScriptt学习/"></div>
+	<div class="ds-thread" data-thread-key="JavaScriptt学习" data-title="JavaScript学习-" data-url="lindyer.github.io/2017/04/18/JavaScriptt学习/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -431,7 +431,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,11 +439,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">C++</a>
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,7 +447,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">概念</a>
+                <a href="javascript:void(0)" class="color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,7 +455,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">js</a>
+                <a href="javascript:void(0)" class="color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">概念</a>
               </li>
             
             <div class="clearfix"></div>
