@@ -18,7 +18,7 @@ JSON对象序列化: stringify ( value [ , replacer [ , space ] ] );value通常�
 <meta property="og:description" content="Datevar now = new Date();new Date().getTime(); //返回当前时间戳Date.now(); //返回当前时间戳
 需要注意的是 now.getMonth();  //月份，范围是0-11,
 JSON对象序列化: stringify ( value [ , replacer [ , space ] ] );value通常为对象或数组，replacer为用于控">
-<meta property="og:updated_time" content="2017-04-23T13:00:37.374Z">
+<meta property="og:updated_time" content="2017-04-23T13:47:03.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS之标准对象">
 <meta name="twitter:description" content="Datevar now = new Date();new Date().getTime(); //返回当前时间戳Date.now(); //返回当前时间戳
@@ -162,6 +162,7 @@ JSON对象序列化: stringify ( value [ , replacer [ , space ] ] );value通常�
         <h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().getTime(); <span class="comment">//返回当前时间戳</span></div><div class="line"><span class="built_in">Date</span>.now(); <span class="comment">//返回当前时间戳</span></div></pre></td></tr></table></figure>
 <p>需要注意的是 now.getMonth();  //月份，范围是0-11,</p>
 <h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><h5 id="对象序列化-stringify-value-replacer-space"><a href="#对象序列化-stringify-value-replacer-space" class="headerlink" title="对象序列化: stringify ( value [ , replacer [ , space ] ] );"></a>对象序列化: stringify ( value [ , replacer [ , space ] ] );</h5><p>value通常为对象或数组，replacer为用于控制筛选对象的键值，如果只想输出指定的属性，可以传入<code>Array</code>，也可为函数,space为输出控制</p>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoming = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">"小明"</span>,</div><div class="line">	<span class="attr">age</span>: <span class="number">13</span>,</div><div class="line">	<span class="attr">gender</span>: <span class="literal">true</span>,</div><div class="line">	<span class="attr">height</span>: <span class="number">1.63</span>,</div><div class="line">	<span class="attr">grade</span>: <span class="literal">null</span>,</div><div class="line">	<span class="string">'middle-school'</span>: <span class="string">"\'W3c\' Middle School"</span>,</div><div class="line">	<span class="attr">skills</span>: [<span class="string">'JS'</span>,<span class="string">"Java"</span>,<span class="string">"Python"</span>,<span class="string">"Lisp"</span>]</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.info(<span class="built_in">JSON</span>.stringify(xiaoming,<span class="literal">null</span>, <span class="string">' '</span>))</div></pre></td></tr></table></figure>
 <p>结果：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="string">"name"</span>: <span class="string">"小明"</span>,</div><div class="line"> <span class="string">"age"</span>: <span class="number">13</span>,</div><div class="line"> <span class="string">"gender"</span>: <span class="literal">true</span>,</div><div class="line"> <span class="string">"height"</span>: <span class="number">1.63</span>,</div><div class="line"> <span class="string">"grade"</span>: <span class="literal">null</span>,</div><div class="line"> <span class="string">"middle-school"</span>: <span class="string">"'W3c' Middle School"</span>,</div><div class="line"> <span class="string">"skills"</span>: [</div><div class="line">  <span class="string">"JS"</span>,</div><div class="line">  <span class="string">"Java"</span>,</div><div class="line">  <span class="string">"Python"</span>,</div><div class="line">  <span class="string">"Lisp"</span></div><div class="line"> ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -468,7 +469,7 @@ JSON对象序列化: stringify ( value [ , replacer [ , space ] ] );value通常�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,6 +478,10 @@ JSON对象序列化: stringify ( value [ , replacer [ , space ] ] );value通常�
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,10 +494,6 @@ JSON对象序列化: stringify ( value [ , replacer [ , space ] ] );value通常�
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
