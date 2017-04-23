@@ -136,6 +136,115 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS之标准对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/19/JS之标准对象/">JS之标准对象</a>
+    </h1>
+  
+
+        <a href="/2017/04/19/JS之标准对象/" class="archive-article-date">
+  	<time datetime="2017-04-19T14:51:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().getTime(); <span class="comment">//返回当前时间戳</span></div><div class="line"><span class="built_in">Date</span>.now(); <span class="comment">//返回当前时间戳</span></div></pre></td></tr></table></figure>
+<p>需要注意的是 now.getMonth();  //月份，范围是0-11,</p>
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><h5 id="对象序列化-stringify-value-replacer-space"><a href="#对象序列化-stringify-value-replacer-space" class="headerlink" title="对象序列化: stringify ( value [ , replacer [ , space ] ] );"></a>对象序列化: stringify ( value [ , replacer [ , space ] ] );</h5><p>value通常为对象或数组，replacer为用于控制筛选对象的键值，如果只想输出指定的属性，可以传入<code>Array</code>，也可为函数,space为输出控制</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoming = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">"小明"</span>,</div><div class="line">	<span class="attr">age</span>: <span class="number">13</span>,</div><div class="line">	<span class="attr">gender</span>: <span class="literal">true</span>,</div><div class="line">	<span class="attr">height</span>: <span class="number">1.63</span>,</div><div class="line">	<span class="attr">grade</span>: <span class="literal">null</span>,</div><div class="line">	<span class="string">'middle-school'</span>: <span class="string">"\'W3c\' Middle School"</span>,</div><div class="line">	<span class="attr">skills</span>: [<span class="string">'JS'</span>,<span class="string">"Java"</span>,<span class="string">"Python"</span>,<span class="string">"Lisp"</span>]</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.info(<span class="built_in">JSON</span>.stringify(xiaoming,<span class="literal">null</span>, <span class="string">' '</span>))</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="string">"name"</span>: <span class="string">"小明"</span>,</div><div class="line"> <span class="string">"age"</span>: <span class="number">13</span>,</div><div class="line"> <span class="string">"gender"</span>: <span class="literal">true</span>,</div><div class="line"> <span class="string">"height"</span>: <span class="number">1.63</span>,</div><div class="line"> <span class="string">"grade"</span>: <span class="literal">null</span>,</div><div class="line"> <span class="string">"middle-school"</span>: <span class="string">"'W3c' Middle School"</span>,</div><div class="line"> <span class="string">"skills"</span>: [</div><div class="line">  <span class="string">"JS"</span>,</div><div class="line">  <span class="string">"Java"</span>,</div><div class="line">  <span class="string">"Python"</span>,</div><div class="line">  <span class="string">"Lisp"</span></div><div class="line"> ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.info(<span class="built_in">JSON</span>.stringify(xiaoming,[<span class="string">'name'</span>,<span class="string">'skills'</span>], <span class="string">' '</span>))</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="string">"name"</span>: <span class="string">"小明"</span>,</div><div class="line"> <span class="string">"skills"</span>: [</div><div class="line">  <span class="string">"JS"</span>,</div><div class="line">  <span class="string">"Java"</span>,</div><div class="line">  <span class="string">"Python"</span>,</div><div class="line">  <span class="string">"Lisp"</span></div><div class="line"> ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>replacer为函数：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.info(<span class="built_in">JSON</span>.stringify(xiaoming,<span class="function"><span class="keyword">function</span> (<span class="params">key ,value</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> value === <span class="string">"string"</span>)&#123;</div><div class="line">		<span class="keyword">return</span> value.toUpperCase()</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> value</div><div class="line">&#125;,<span class="string">" "</span>))</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="string">"name"</span>: <span class="string">"小明"</span>,</div><div class="line"> <span class="string">"age"</span>: <span class="number">13</span>,</div><div class="line"> <span class="string">"gender"</span>: <span class="literal">true</span>,</div><div class="line"> <span class="string">"height"</span>: <span class="number">1.63</span>,</div><div class="line"> <span class="string">"grade"</span>: <span class="literal">null</span>,</div><div class="line"> <span class="string">"middle-school"</span>: <span class="string">"'W3C' MIDDLE SCHOOL"</span>,</div><div class="line"> <span class="string">"skills"</span>: [</div><div class="line">  <span class="string">"JS"</span>,</div><div class="line">  <span class="string">"JAVA"</span>,</div><div class="line">  <span class="string">"PYTHON"</span>,</div><div class="line">  <span class="string">"LISP"</span></div><div class="line"> ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果我们还想要精确控制如何序列化小明，可以给xiaoming定义一个toJSON()方法，直接返回JSON应该序列化的数据：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoming = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">"小明"</span>,</div><div class="line">	<span class="attr">age</span>: <span class="number">13</span>,</div><div class="line">	<span class="attr">gender</span>: <span class="literal">true</span>,</div><div class="line">	<span class="attr">height</span>: <span class="number">1.63</span>,</div><div class="line">	<span class="attr">grade</span>: <span class="literal">null</span>,</div><div class="line">	<span class="string">'middle-school'</span>: <span class="string">"\'W3c\' Middle School"</span>,</div><div class="line">	<span class="attr">skills</span>: [<span class="string">'JS'</span>,<span class="string">"Java"</span>,<span class="string">"Python"</span>,<span class="string">"Lisp"</span>],</div><div class="line">	<span class="attr">toJSON</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> &#123;</div><div class="line">			<span class="string">'Name'</span>: <span class="keyword">this</span>.name,</div><div class="line">			<span class="string">"Age"</span>: <span class="keyword">this</span>.age</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.info(<span class="built_in">JSON</span>.stringify(xiaoming,<span class="literal">null</span>,<span class="string">" "</span>))</div></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="attr">"Name"</span>: <span class="string">"小明"</span>,</div><div class="line"> <span class="attr">"Age"</span>: <span class="number">13</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="反序列化：JSON-parse"><a href="#反序列化：JSON-parse" class="headerlink" title="反序列化：JSON.parse()"></a>反序列化：JSON.parse()</h5><p>当我们需要将一个JSON格式的字符串转化为对象时</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="string">'&#123;"name":"小明","age":14&#125;'</span>); <span class="comment">// Object &#123;name: '小明', age: 14&#125;</span></div><div class="line"><span class="built_in">console</span>.info(obj.name,obj.age) <span class="comment">//小明 14</span></div></pre></td></tr></table></figure>
+<p>JSON.parse() 还可以接受一个函数，用来转换解析出的属性：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="string">'&#123;"name":"小明","age":14&#125;'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">key,value</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> (key ===<span class="string">'name'</span>) &#123;</div><div class="line">		<span class="keyword">return</span> value + <span class="string">"同学"</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> value</div><div class="line">&#125;); </div><div class="line"><span class="built_in">console</span>.info(obj.name)  <span class="comment">//小明同学</span></div></pre></td></tr></table></figure>
+<h4 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h4><p>创建正则表示式有两种方式，一个是 <code>/正则表达式/</code>写出来，第二种是通过new RegExp(‘正则表达式’)创建一个RegExp对象。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^j\-s$/</span>;</div><div class="line"><span class="keyword">var</span> reg2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'^j\\-s$'</span>)</div></pre></td></tr></table></figure>
+<p>两者不同的，new RegExp() 写法，因为字符串转义问题，字符串的两个 <code>\\</code> 实际上表示一个 <code>\</code></p>
+<p>用RegExp对象的test()测试给定字符串是否符合条件。</p>
+<p><code>\d</code> 匹配一个数字</p>
+<p><code>\w</code> 匹配一个字母或数字</p>
+<p><code>.</code> 匹配任意字符</p>
+<p><code>\s</code> 匹配一个空格</p>
+<p>若要匹配变长字符，在正则表达式中，用<code>*</code> 表示任意个字符（包括0个），用<code>+</code>表示至少一个字符，用<code>?</code>表示0个或者1个字符，用{n}表示n个字符，用{n,m}表示n-m个字符</p>
+<p>精确匹配：可以用<code>[]</code>表示范围</p>
+<p><code>[0-9a-zA-z\_</code> 匹配一个数字、字母或者下划线；</p>
+<p><code>[0-9a-zA-z\_]+</code> 匹配至少由一个数字、字母或者下划线组成的字符串；</p>
+<p><code>A|B</code> 匹配A或B</p>
+<p><code>^</code> 表示行的开头，如 <code>^\d</code>表示必须以数字开头。</p>
+<p><code>$</code> 表示行的结束，如 <code>^\d</code>表示必须以数字结束。</p>
+<h5 id="应用-切分字符串"><a href="#应用-切分字符串" class="headerlink" title="应用-切分字符串"></a>应用-切分字符串</h5><p>用正则表达式切字符串比用固定字符更灵活：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> splitstr = <span class="string">"a,b  ;; c"</span></div><div class="line"><span class="built_in">console</span>.info(splitstr.split(<span class="string">" "</span>))</div><div class="line"><span class="built_in">console</span>.info(splitstr.split(<span class="regexp">/[\s\;\,]+/</span>))</div></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">[ <span class="string">'a,b'</span>, <span class="string">''</span>, <span class="string">';;'</span>, <span class="string">'c'</span> ]</div><div class="line">[ <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span> ]</div></pre></td></tr></table></figure>
+<h5 id="应用-分组"><a href="#应用-分组" class="headerlink" title="应用-分组"></a>应用-分组</h5><p>除了简单地判断是否匹配外，正则表达式还有提取子串的强大功能；用()表示的就是提取分组(Group);</p>
+<p><code>^(\d{3})-(\d{3,8})$</code>分别定义两个组，可以直接从匹配地字符串中提取出区号和本地号码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> reg3 = <span class="regexp">/^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/</span></div><div class="line"><span class="built_in">console</span>.info(reg3.exec(<span class="string">'010-123124'</span>))<span class="comment">//[ '010-123124', '010', '123124']</span></div><div class="line"><span class="built_in">console</span>.info(reg3.exec(<span class="string">'010 123412'</span>))<span class="comment">//null</span></div></pre></td></tr></table></figure>
+<p>如果正则表达式定义了组，就可以在RegExp对象上用<code>exec()</code>方法提取子串来，成功返回Array，失败返回null</p>
+<h5 id="全局搜索"><a href="#全局搜索" class="headerlink" title="全局搜索"></a>全局搜索</h5><p>JS的正则表达式还有几个特殊的标志，最常用的是<code>g</code>，表示全局匹配：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> r1 = <span class="regexp">/test/g</span>;</div><div class="line"><span class="comment">//等价于</span></div><div class="line"><span class="keyword">var</span> r2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'test'</span>,<span class="string">'g'</span>)</div></pre></td></tr></table></figure>
+<p>全局匹配可以多次执行<code>exec()</code>方法来搜索一个匹配的字符串。当我们指定<code>g</code>标志后，每次运行<code>exec()</code>，正则表达式本身会更新<code>lastIndex</code>属性，表示上次匹配到的最后索引：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">'JavaScript, VBScript, JScript and ECMAScript'</span>;</div><div class="line"><span class="keyword">var</span> re=<span class="regexp">/[a-zA-Z]+Script/g</span>;</div><div class="line"></div><div class="line"><span class="comment">// 使用全局匹配:</span></div><div class="line">re.exec(s); <span class="comment">// ['JavaScript']</span></div><div class="line">re.lastIndex; <span class="comment">// 10</span></div><div class="line"></div><div class="line">re.exec(s); <span class="comment">// ['VBScript']</span></div><div class="line">re.lastIndex; <span class="comment">// 20</span></div><div class="line"></div><div class="line">re.exec(s); <span class="comment">// ['JScript']</span></div><div class="line">re.lastIndex; <span class="comment">// 29</span></div><div class="line"></div><div class="line">re.exec(s); <span class="comment">// ['ECMAScript']</span></div><div class="line">re.lastIndex; <span class="comment">// 44</span></div><div class="line"></div><div class="line">re.exec(s); <span class="comment">// null，直到结束仍没有匹配到</span></div></pre></td></tr></table></figure>
+<p>全局匹配类似搜索，因此不能使用<code>/^...$/</code>，那样只会最多匹配一次。</p>
+<p>正则表达式还可以指定<code>i</code>标志，表示忽略大小写，<code>m</code>标志，表示执行多行匹配。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> reg5 = <span class="regexp">/test/i</span>;</div><div class="line"><span class="built_in">console</span>.info(reg5.test(<span class="string">"TeSt"</span>))  <span class="comment">//true</span></div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">js</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/19/JS之标准对象/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JavaScript之变量和闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -356,11 +465,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
         </li>
       
 		</ul>
@@ -491,11 +600,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">Hexo</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">入门</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">Hexo</a>
         </li>
       
 		</ul>
@@ -731,7 +840,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Hexo</a>
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,10 +849,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,6 +861,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
