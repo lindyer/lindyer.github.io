@@ -20,7 +20,7 @@
 类： 类是对象的类型模板，例如，定义Student类来表示学生，类本身是一种类型，Student表示学生类型，但不表示任何具体的某个学生；
 实例：实例是根据类创建的对象，例如，根据Student类可以创建出xiaoming、xiaohong等多个对象实例，没个实例表示一个具体的学生，他们都是属于Student类型。
 然而Java">
-<meta property="og:updated_time" content="2017-04-23T17:14:04.111Z">
+<meta property="og:updated_time" content="2017-04-24T13:38:52.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS之面向对象编程">
 <meta name="twitter:description" content="在C++/Java的面向对象编程中，有两个基本概念，那即是类和对象；
@@ -166,6 +166,7 @@
 <p>类： 类是对象的类型模板，例如，定义Student类来表示学生，类本身是一种类型，Student表示学生类型，但不表示任何具体的某个学生；</p>
 <p>实例：实例是根据类创建的对象，例如，根据Student类可以创建出<code>xiaoming</code>、<code>xiaohong</code>等多个对象实例，没个实例表示一个具体的学生，他们都是属于Student类型。</p>
 <p>然而JavaScript并不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程。</p>
+<a id="more"></a>
 <p>原型是指当我们想要创建xiaoming这个具体的学生时，我们并没有一个Student类型可用。那怎么办？恰好有这么一个现成的对象：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Student = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">"student"</span>,</div><div class="line">	<span class="attr">grade</span>: <span class="string">"grade"</span>,</div><div class="line">	<span class="attr">run</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.info(<span class="keyword">this</span>.name+<span class="string">' is running ...'</span>)</div><div class="line">	&#125;</div><div class="line">  </div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> Man = &#123;</div><div class="line">  <span class="attr">say</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.info(<span class="string">'I am man'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">Student.__proto__ = Man;</div><div class="line"><span class="keyword">var</span> xiaoming = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">"小明"</span>,</div><div class="line">	<span class="attr">age</span>: <span class="number">12</span></div><div class="line">&#125;;</div><div class="line">xiaoming.__proto__ = Student;  <span class="comment">//[1]</span></div><div class="line"><span class="built_in">console</span>.info(xiaoming.run()); <span class="comment">//小明 is running ...</span></div><div class="line"><span class="built_in">console</span>.info(xiaoming.say()); <span class="comment">//I am man</span></div></pre></td></tr></table></figure>
 <p>[1] 处把xiaoming的原型指向了对象Student，当想调用run()和say()方法时，xiaoming对象中找不到就会到往上到他的原型链中找，所以我们才可以这样调用</p>
@@ -464,6 +465,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">C++</a>
               </li>
              
@@ -472,15 +477,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
